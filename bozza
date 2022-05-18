@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta id="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="game.js"></script>
+    <title>TrisGame</title>
+</head>
+<div class="title">
+<pre>Il gioco del tris</pre>
+</div>
+
+<div class="rules">
+   <pre>Il gioco inizia cliccando su una casella
+      Il primo giocatore sarà contraddistinto con le X <strong>(Giocatore X)</strong>
+      Il secondo giocatore sarà contraddistinto con le O <strong>(Giocatore O)</strong>
+      Vince il giocatore che per primo riuscirà ad ottenere 3 simboli consecutivi, orizzontalmente, verticalmente o diagonalmente
+      Altrimenti la partita finisce il parità.
+   </pre>
+</div>
+
+<div>
+   <table class="Mytable" >
+      <tr>
+      <td class="Mytd"  > <img class="Myimg" src="nothing.png" id="00" onclick="clicked(0,0,'00')"> </td>
+      <td class="Mytd"  > <img class="Myimg" src="nothing.png" id="01" onclick="clicked(0,1,'01')"> </td>
+      <td class="Mytd"  > <img class="Myimg" src="nothing.png" id="02" onclick="clicked(0,2,'02')"> </td>
+   </tr>
+   <tr>
+      <td class="Mytd"  ><img class="Myimg" src="nothing.png" id="10" onclick="clicked(1,0,'10')">  </td>
+      <td class="Mytd"  ><img class="Myimg" src="nothing.png" id="11" onclick="clicked(1,1,'11')">  </td>
+      <td class="Mytd"  ><img class="Myimg" src="nothing.png" id="12" onclick="clicked(1,2,'12')">  </td>
+   </tr>
+   <tr>
+      <td class="Mytd"  ><img class="Myimg" src="nothing.png" id="20" onclick="clicked(2,0,'20')">  </td>
+      <td class="Mytd"  ><img class="Myimg" src="nothing.png" id="21" onclick="clicked(2,1,'21')"> </td>
+      <td class="Mytd"  ><img class="Myimg" src="nothing.png" id="22" onclick="clicked(2,2,'22')"> </td>
+   </tr>
+   </table>
+</div>
+<div align="center">
+   <button class="Mybutton" onclick=NewGame()>
+      <strong>RESET</strong>
+   </button>
+</div>
+
+//////////////////////////
+function clicked(r,c,id)
+  {  
+line=r
+column=c
+if(turn==true)
+{
+grid[line][column]=0
+document.getElementById(id).src=imgO
+document.getElementById(id).disable=true
+
+
+//grid[line][column].isclicked=false
+//document.onclick=false
+//document.getElementsById("n").disabled=true
+
+
+control(0)
+}
+
+else
+{
+grid[line][column]=1
+//grid[n]=1
+document.getElementById(id).src=imgX
+document.getElementById(id).disable=true
+
+//document.getElementsById("n").disabled=true
+//grid[line][column].isclicked=false
+//document.onclick=false
+//document.getElementById("name").disabled=true
+control(1)
+}
+
+turn=!turn 
+turnTot++   
+}
+
+
+
+  function control(x)
+{
+    if ((grid[0]==0)&&(grid[1]==0)&&(grid[2]==0))
+{
+   win=1
+    alert("ha vinto il cerchio")
+    
+}
+
+if ((grid[3]==0)&&(grid[4]==0)&&(grid[5]==0))
+{
+   win=1
+    alert ("ha vinto il cerchio")
+}
+
+if ((grid[6]==0)&&(grid[7]==0)&&(grid[8]==0))
+{
+   win=1
+    alert ("ha vinto il cerchio")
+}
+
+if ((grid[0]==0)&&(grid[3]==0)&&(grid[6]==0))
+{
+   win=1
+    alert ("ha vinto il cerchio")
+}
+
+if ((grid[1]==0)&&(grid[4]==0)&&(grid[7]==0))
+{
+   win=1
+    alert ("ha vinto il cerchio")
+}
+
+if ((grid[2]==0)&&(grid[5]==0)&&(grid[8]==0))
+{
+   win=1
+    alert ("ha vinto il cerchio")
+}
+
+if ((grid[0]==0)&&(grid[4]==0)&&(grid[8]==0))
+{
+   win=1
+    alert ("ha vinto il cerchio")
+}
+
+if ((grid[2]==0)&&(grid[4]==0)&&(grid[6]==0))
+{
+   win=1
+    alert ("ha vinto il cerchio")
+}
+
+
+
+
+if ((grid[0]==1)&&(grid[1]==1)&&(grid[2]==1))
+{
+   win=1
+    alert ("ha vinto la croce")
+}
+
+
+if ((grid[3]==1)&&(grid[4]==1)&&(grid[4]==1))
+{
+   win=1
+    alert ("ha vinto la croce")
+}
+
+
+if ((grid[6]==1)&&(grid[7]==1)&&(grid[8]==1))
+{
+   win=1
+    alert ("ha vinto la croce")
+}
+
+
+if ((grid[0]==1)&&(grid[3]==1)&&(grid[6]==1))
+{
+   win=1
+   alert ("ha vinto la croce")
+}
+
+if ((grid[1]==1)&&(grid[4]==1)&&(grid[7]==1))
+{
+   win=1
+    alert ("ha vinto la croce")
+}
+
+
+if ((grid[2]==1)&&(grid[5]==1)&&(grid[8]==1))
+{
+   win=1
+    alert ("ha vinto la croce")
+}
+
+
+if ((grid[2]==1)&&(grid[4]==1)&&(grid[8]==1))
+{
+   win=1
+    alert ("ha vinto la croce")
+}
+
+if ((grid[2]==1)&&(grid[4]==1)&&(grid[6]==1))
+{
+   win=1
+    alert ("ha vinto la croce")
+}
+if(turnTot==9 && win==0){
+   alert ("la partita si è conclusa in pareggio")
+}
+}  
+
