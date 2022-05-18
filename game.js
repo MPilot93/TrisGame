@@ -20,11 +20,15 @@ function clicked(position) {
      turn++
      if (turn % 2) {
         simbol = "X"
-        console.log(simbol)
+        //console.log(simbol)
+        document.getElementById('o'+position).style.display='block'
+
         }
      else {
         simbol = "O"
-        console.log(simbol)
+        //console.log(simbol)
+        document.getElementById('x'+position).style.display='block'
+        document.getElementById
      }
      
    }
@@ -127,9 +131,12 @@ function NewGame(){
    
    endGame = false
    for(let i=0; i<9; i++){
-     cell[i].innerHTML=" "
+      cell[i].innerHTML=" "
       cell[i].disabled=false
-      console.log(" ")
+      console.log('x'+i)
+      document.getElementById('x'+(i+1)).style.display='none'
+      document.getElementById('o'+(i+1)).style.display='none'
+      //console.log(" ")
    }
 }
 
