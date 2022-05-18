@@ -6,34 +6,28 @@ var n
 var win=0
 
    var i
-   var grid=[3]
-   for(i=0;i<3;i++)  
-   grid[i]=[3]
-
-  function play()
-  {  
-for(i=0; i<9; i++)
-{
-
-grid[i]=-1
+   var grid=[-1,-1,-1,
+             -1,-1,-1,
+             -1,-1,-1]
+  
 turn==true
-}
-  }
 
 
-function clicked(n)
+
+function clicked(r,c,id)
   {  
-line=Math.floor((n)/3)
-column=n%3
+line=r
+column=c
 if(turn==true)
 {
 grid[line][column]=0
-grid[n]=0
-document.images[n].src="o.png"
+document.getElementById(id).src="o.png"
+document.getElementById(id).disable=true
+
 
 //grid[line][column].isclicked=false
 //document.onclick=false
-document.getElementsByClassName("Myimg").disabled=true
+//document.getElementsById("n").disabled=true
 
 
 control(0)
@@ -42,10 +36,11 @@ control(0)
 else
 {
 grid[line][column]=1
-grid[n]=1
-document.images[n].src="x.png"
+//grid[n]=1
+document.getElementById(id).src="x.png"
+document.getElementById(id).disable=true
 
-document.getElementsByClassName("Myimg").disabled=true
+//document.getElementsById("n").disabled=true
 //grid[line][column].isclicked=false
 //document.onclick=false
 //document.getElementById("name").disabled=true
@@ -173,14 +168,13 @@ if(turnTot==9 && win==0){
 function NewGame(){
    for(let j=0; j<9;j++){
       document.images[j].src="nothing.png"
-      grid[j]=-1
+     
    }
-  
+
+   var grid=[-1,-1,-1,
+      -1,-1,-1,
+      -1,-1,-1]
    turn==!turn
    turnTot=1
 }
 
-function disable(n){
-   var temp=document.getElementsByName(toString(n))
-   temp.disable=true
-}
