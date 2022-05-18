@@ -5,7 +5,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script type="text/javascript" src="game.js"></script>
     <title>TrisGame</title>
 </head>
@@ -25,24 +24,24 @@
 <div>
    <table class="Mytable" >
       <tr>
-      <td class="Mytd"></td>
-      <td class="Mytd"></td>
-      <td class="Mytd"></td>
+      <td class="Mytd" name="0" onclick="clicked(0)"> <img class="Myimg" src="nothing.png"  </td>
+      <td class="Mytd" name="1" onclick="clicked(1)"><img class="Myimg" src="nothing.png"  </td>
+      <td class="Mytd" name="2" onclick="clicked(2)"><img class="Myimg" src="nothing.png"  </td>
    </tr>
    <tr>
-      <td class="Mytd"></td>
-      <td class="Mytd"></td>
-      <td class="Mytd"></td>
+      <td class="Mytd" name="3" onclick="clicked(3)"><img class="Myimg" src="nothing.png"   </td>
+      <td class="Mytd" name="4" onclick="clicked(4)"><img class="Myimg" src="nothing.png"   </td>
+      <td class="Mytd" name="5" onclick="clicked(5)"><img class="Myimg" src="nothing.png"   </td>
    </tr>
    <tr>
-      <td class="Mytd"></td>
-      <td class="Mytd"></td>
-      <td class="Mytd"></td>
+      <td class="Mytd" name="6" onclick="clicked(6)"><img class="Myimg" src="nothing.png"   </td>
+      <td class="Mytd" name="7" onclick="clicked(7)"><img class="Myimg" src="nothing.png"  </td>
+      <td class="Mytd" name="8" onclick="clicked(8)"><img class="Myimg" src="nothing.png"  </td>
    </tr>
    </table>
 </div>
 <div>
-   <button class="Mybutton">
+   <button class="Mybutton" onclick=NewGame()>
       <strong>RESET</strong>
    </button>
 </div>

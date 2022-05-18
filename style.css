@@ -32,6 +32,11 @@
 
 }
 
+.Myimg{
+   width: 120px;
+   height: 120px;
+   border-radius: 20%;
+}
 .Mybutton{
    color: rgb(201, 242, 242);
    background: rgb(26, 194, 203);
